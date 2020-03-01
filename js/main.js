@@ -1,32 +1,40 @@
-//  increment item
 document.getElementById("plus").addEventListener("click", function() {
     let itemNo = noOfItem("item");
     itemNo = itemNo + 1;
   
     showItemandprice("item", "iphonprice", itemNo);
   });
-  
-  // decrement item
+
+
+
   document.getElementById("minus").addEventListener("click", function() {
     let itemNo = noOfItem("item");
     itemNo = itemNo - 1;
   
+
+
+
     if (itemNo > 0) {
       showItemandprice("item", "iphonprice", itemNo);
     } else {
-      // zero("item", "iphonprice");
-      showItemandprice("item", "iphonprice", 0);
+       showItemandprice("item", "iphonprice", 0);
     }
   });
   
+
+
+
   document.getElementById("casePlus").addEventListener("click", function() {
     let itemNo = noOfItem("itemc");
     itemNo = itemNo + 1;
   
     showItemandprice("itemc", "casePrice", itemNo);
   });
-  
-  // decrement item
+
+
+
+
+
   document.getElementById("caseMinus").addEventListener("click", function() {
     let itemNo = noOfItem("itemc");
     itemNo = itemNo - 1;
@@ -34,12 +42,14 @@ document.getElementById("plus").addEventListener("click", function() {
     if (itemNo > 0) {
       showItemandprice("itemc", "casePrice", itemNo);
     } else {
-      // zero("itemc", "casePrice");
-      //a
+
       showItemandprice("itemc", "casePrice", 0);
     }
   });
   
+
+
+
   function amount() {
     let iphon = parseInt(document.getElementById("iphonprice").innerText);
     let cas = parseInt(document.getElementById("casePrice").innerText);
@@ -49,29 +59,28 @@ document.getElementById("plus").addEventListener("click", function() {
     document.getElementById("total").innerText = (sub + sub * 0.15).toFixed(2);
   }
   
+
+
   document.getElementById("cphon").addEventListener("click", function() {
     document.getElementById("iphoncart").classList.add("disp");
   
     showItemandprice("item", "iphonprice", 0);
   });
+
+
+
   document.getElementById("ccase").addEventListener("click", function() {
     document.getElementById("ccart").classList.add("disp");
   
     showItemandprice("itemc", "casePrice", 0);
   });
+
+
+
+
+
   
-  // function
-  
-  // ===============================
-  //  Show Price zero
-  // function zero(item, productPrice) {
-  //   document.getElementById(item).value = 0;
-  
-  //   document.getElementById(productPrice).innerText = 0;
-  //   amount();
-  // }
-  
-  function showItemandprice(id, productPrice, item) {
+function showItemandprice(id, productPrice, item) {
     if (productPrice == "iphonprice") {
       document.getElementById(id).value = item;
       document.getElementById(productPrice).innerText = 1219 * item;
